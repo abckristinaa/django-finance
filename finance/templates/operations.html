@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}Добавление операции:{% endblock %}
+
+{% block content %}
+
+{% if wallet %}
+
+<table class="table">
+    <tbody >
+        <tr>
+            <td>
+                <form action="{% url 'finance:operations' pk=wallet.id %}" method='POST' enctype="multipart/form-data">
+                    {% csrf_token %}
+
+                    <label>Кошелек: {{ wallet.name }} </label>
+                    <br>
+                    <br>
+                        <label>Сумма, руб.:</label>
+                        <br>
+                            <div class="input-group mb-3">
+                                <input type="text" name="amount" class="form-control" aria-describedby="button-addon3 required">
+                             </div>
+                        <br>
+                            <div class="form_toggle">
+                                <div id="button-addon3" class="input-group-prepend">
+                                <div class="form_toggle-item item-1">
+                                    <input id="fid-1" type='radio' name="type" value="deposit" checked><label for="fid-1">Пополнение</label>
+                                </div>
+                                <div class="form_toggle-item item-2">
+                                    <input id="fid-2" type='radio' name="type" value="withdrawal"><label for="fid-2">Списание</label>
+                                </div>
+                                    </div>
+                                    <input type="text" name="description" class="form-control" placeholder="Комментарий" aria-describedby="button-addon3">
+                            </div>
+                        <br>
+                            <input class="get-started-btn" type='submit' name="action" value='Записать'/>
+
+                </form>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+{% else %}
+
+<p> Кошелек не найден</p>
+
+{% endif %}
+
+{% endblock %}

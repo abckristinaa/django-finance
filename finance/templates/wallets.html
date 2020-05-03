@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}Добавленные кошельки:{% endblock %}
+
+{% block content %}
+
+{% if account_list %}
+
+<table class="table">
+    <tbody>
+        {% for wallet in account_list %}
+            <tr>
+                <td>
+                    {{ wallet.name }}
+                </td>
+                <td>
+                    <a href="{% url 'finance:wallet-edition' pk=wallet.id %}"> Изменить</a>
+                </td>
+                <td>
+                    <a href="{% url 'finance:wallet-deletion' pk=wallet.id %}"> Удалить</a>
+                </td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% else %}
+
+<p align="center">Добавьте новый кошелек или кредитную карту.</p>
+
+{% endif %}
+
+<div class="bottom-block">
+<h4><a class="get-started-btn" href="{% url 'finance:wallet-creation' %}">Создать новый</a></h4>
+</div>
+
+{% endblock %}
+
+

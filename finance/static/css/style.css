@@ -1,0 +1,200 @@
+body {
+color: #666666;
+background: #eff5f5;
+}
+
+#logo {
+    float: left;
+    position: fixed;
+    margin: 0 0 0 100px;
+    padding: 10px;
+}
+
+#logo h1 a, a:hover {
+    color: #fff;
+    text-decoration: none;
+    outline: none;
+
+}
+
+.hvr-fade  {
+  list-style-type: none;
+  box-shadow: 0px 0px 10px rgba(13, 78, 92, 0.15);
+  margin: 0;
+  padding: 0;
+  height: 70px;
+  overflow: hidden;
+  font-weight: 200;
+  font-family: "Montserrat", sans-serif;
+  background: linear-gradient(45deg, #1de099, #1dc8cd);
+}
+
+.hvr-fade li {
+  float: right;
+}
+
+.hvr-fade li a {
+  display: inline-block;
+  color: white;
+  padding: 23px 22px;
+  text-decoration: none;
+  outline: none;
+}
+
+.header-block {
+    display: block;
+    width: 100%;
+    background: #343a40;
+    padding: 3px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+   }
+
+.bottom-block {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    position: relative;
+    top: 30px;
+    left: 0px;
+    text-align: center;
+   }
+
+.table {
+    width: 70%;
+    background: #eff5f5;
+    position: relative;
+    top: 0px;
+    left: 0px;
+   }
+
+.table-hover {
+    background: #eff5f5;
+    position: relative;
+    top: 0px;
+    left: 0px;
+   }
+
+a {
+    color: #1dc8cd;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+a:hover {
+    color: #17a2b8;
+    text-decoration: underline;
+}
+
+h4 {
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+    margin: 0 0 20px 0;
+    font-size: 28px;
+}
+
+.get-started-btn {
+    background: linear-gradient(45deg, #1de099, #1dc8cd);
+    display: inline-block;
+    padding: 10px 30px;
+    border-radius: 20px;
+    color: #fff;
+    transition: none;
+    font-size: 14px;
+    font-weight: 400;
+    font-family: "Montserrat", sans-serif;
+}
+
+.row {
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    box-sizing: border-box;
+}
+
+.col-lg-6 {
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+
+.box {
+    padding: 40px;
+    margin-bottom: 30px;
+    box-shadow: 0px 0px 30px rgba(73, 78, 92, 0.15);
+    background: #fff;
+    transition: 0.4s;
+}
+
+.section-title {
+    font-size: 26px;
+    color: #111;
+    text-align: center;
+    font-weight: 400;
+}
+
+#more-features {
+    padding: 50px 0 30px 0;
+}
+
+.form_toggle {
+	display: flex;
+	overflow: hidden;
+	margin-right: -1px;
+
+}
+.form_toggle-item {
+	float: left;
+	display: inline-block;
+}
+
+.form_toggle-item input[type=radio] {
+	display: none;
+}
+
+.form_toggle-item label {
+	display: inline-block;
+	padding: 0px 15px;
+	line-height: 35px;
+	border: 1px solid #999;
+	border-right: none;
+	cursor: pointer;
+	user-select: none;
+}
+
+.form_toggle .item-1 label {
+	border-radius: 3px 0 0 3px;
+}
+.form_toggle .item-2 label {
+	border-radius: 0 3px 3px 0;
+	border-right: 1px solid #999;
+	border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+/* Checked */
+.form_toggle .item-1 input[type=radio]:checked + label {
+	background: #c0c4bf;
+}
+.form_toggle .item-2 input[type=radio]:checked + label {
+	background: #c0c4bf;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 1px);
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

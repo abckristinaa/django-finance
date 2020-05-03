@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+{% load static %}
+
+<html lang="ru">
+
+    <head>
+        <meta charset="UTF-8">
+            <title>
+                {% block title %}{% endblock %}
+            </title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'finance:general' %}"><b>Управление</b></a></li>
+            <li><a href="{% url 'finance:general' %}"><b>Выписка</b></a></li>
+        </ul>
+    </nav>
+
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

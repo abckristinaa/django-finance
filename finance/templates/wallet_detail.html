@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}Редактирование кошелька:{% endblock %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <br>
+    <input class="get-started-btn" type="submit" value="Записать">
+</form>
+
+{% endblock %}

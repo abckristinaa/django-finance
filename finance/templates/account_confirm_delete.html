@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}Подтверждение удаления{% endblock %}
+
+{% block content %}
+
+<form method="post">{% csrf_token %}
+    <p>Подтверждаете удаление кошелька "{{ object }}"?</p>
+    <p>Все операции по данному кошельку будут полностью удалены.</p>
+    <input type="submit" value="Confirm">
+</form>
+
+{% endblock %}

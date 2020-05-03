@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+<div class="d-flex flex-column bd-highlight mb-3">
+    <form method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" value="Применить фильтр">
+    </form>
+</div>
+<br>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Дата</th>
+            <th>Сумма, руб.</th>
+            <th>Вид операции</th>
+            <th>Наименование</th>
+            <th>Кошелек</th>
+        </tr>
+        {% for obj in filter.qs %}
+        <tr>
+            <td>
+                {{ obj.created_at|date:"d.m.Y" }}
+            </td>
+            <td align="center">
+                {{ obj.operation.amount }}
+            </td>
+            <td>
+                {{ obj.operation.type }}
+            </td>
+            <td>
+                {{ obj.description }}
+            </td>
+            <td>
+                {{ obj.account.name }}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

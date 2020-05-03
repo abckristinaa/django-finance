@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}Управление операциями:{% endblock %}
+
+{% block content %}
+
+{% if account_list %}
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Баланс, руб.</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for wallet in account_list %}
+                <tr>
+                    <td width="30%">
+                        {{ wallet.name }}
+                    </td>
+                    <td width="30%">
+                        {{ wallet.current_balance }}
+                    </td>
+                    <td>
+                        <a href="{% url 'finance:operations' pk=wallet.id %}"> Добавить операцию
+                        </a>
+                    </td>
+                    <td>
+                        <a href="{% url 'finance:wallet-statement' pk=wallet.id %}"> Выписка
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>Итого:</td>
+                    <td>{{ total }}</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tfoot>
+
+        </table>
+
+{% else %}
+
+<p align="center">Пока ни одного кошелька не создано.</p>
+
+{% endif %}
+
+<div class="bottom-block">
+    <h4><a class="get-started-btn" href="javascript:history.back()">Назад</a></h4>
+</div>
+
+{% endblock %}

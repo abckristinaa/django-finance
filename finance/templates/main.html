@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}My finance{% endblock %}
+
+{% block header %}{% endblock %}
+
+{% block content %}
+
+      <div class="container" align="left">
+        <div class="row">
+
+          <div class="col-lg-6">
+            <div class="box">
+              <h4 class="title"><a href="">Добавить операцию</a></h4>
+              <p class="description">Добавление и редактирование сведений о Ваших поступлениях и расходах.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <h4 class="title"><a href="{% url 'finance:general' %}">Баланс</a></h4>
+              <p class="description">Отчет о текущем остатке средств в разрезе каждого Вашего кошелька.</p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <h4><a href="">История</a></h4>
+              <p class="description">Отчеты по одному или нескольким кошелькам за выбранный период. </p>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="box">
+              <h4 class="title"><a href="{% url 'finance:wallets' %}">Кошельки</a></h4>
+              <p class="description">Добавляйте новые кошельки или банковские карты, чтобы управлять своими расходами.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+{% endblock %}
+
+
