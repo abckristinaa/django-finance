@@ -8,7 +8,7 @@ Added:
   - Statement: general and filtered by wallet
  
 TODO:
-  - datapicker for statement
+  - datapicker for statement filter
   - pagination for statement
   - "add_operation" function refactoring
   - add update for operation with recalculating balance
