@@ -13,12 +13,14 @@ def main(request):
 
 class WalletView(generic.ListView):
     """ Renders list of existing wallets for making changes."""
+
     model = Account
     template_name = "wallets.html"
 
 
 class BalanceView(WalletView):
     """Renders list of existing wallets with balance."""
+
     template_name = "balances.html"
 
     def get_context_data(self, *args, **kwargs):
@@ -41,8 +43,8 @@ class WalletUpdateView(generic.UpdateView):
 class WalletRemoveView(generic.DeleteView):
     model = Account
     template_name = "account_confirm_delete.html"
-    template_name_suffix = ''
-    success_url = '/wallets'
+    template_name_suffix = ""
+    success_url = "/wallets"
 
 
 def statement_list(request, pk=None):
@@ -52,7 +54,7 @@ def statement_list(request, pk=None):
     else:
         queryset = AccountOperation.objects.all()
     f = StatementFilter(request.GET, queryset)
-    return render(request, 'statement_filter.html', {'filter': f})
+    return render(request, "statement_filter.html", {"filter": f})
 
 
 @transaction.atomic
@@ -68,16 +70,13 @@ def add_operation(request, pk):
                 return HttpResponse("Денежных средств в кошельке недостаточно для списания.")
 
         operation, created = Operation.objects.get_or_create(
-            amount=amount,
-            type=operation_type
+            amount=amount, type=operation_type
         )
         if created:
             operation.save()
 
         journal_operation = AccountOperation(
-            description=form_data["description"],
-            operation=operation,
-            account=wallet
+            description=form_data["description"], operation=operation, account=wallet
         )
         journal_operation.save()
 
