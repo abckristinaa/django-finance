@@ -1,10 +1,12 @@
-from django.shortcuts import render, redirect
-from finance.models import Account, AccountOperation, Operation
-from django.http import HttpResponse
 from django.db import transaction
+from django.http import HttpResponse
+from django.shortcuts import redirect, render
 from django.views import generic
-from .forms import CreateWalletForm, UpdateWalletForm
+
+from finance.models import Account, AccountOperation, Operation
+
 from .filters import StatementFilter
+from .forms import CreateWalletForm, UpdateWalletForm
 
 
 def main(request):
@@ -48,7 +50,6 @@ class WalletRemoveView(generic.DeleteView):
 
 
 def statement_list(request, pk=None):
-    print("PK", pk)
     if pk:
         queryset = AccountOperation.objects.filter(account=pk)
     else:

@@ -1,9 +1,10 @@
 from django.db import models
-from django.urls import reverse
 from django.db.models import Sum
+from django.urls import reverse
 
 
 class Account(models.Model):
+    """Represents a wallet"""
     name = models.CharField(max_length=30, unique=True, blank=False)
     start_balance = models.PositiveIntegerField(default=0)
     current_balance = models.PositiveIntegerField(default=0)
@@ -24,6 +25,7 @@ class Account(models.Model):
 
 
 class Operation(models.Model):
+
     amount = models.IntegerField(default=0)
     type = models.CharField(
         choices=[("Поступление", "deposit"), ("Списание", "withdrawal")], max_length=15
