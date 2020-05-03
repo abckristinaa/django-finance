@@ -13,6 +13,7 @@ TODO:
   - "add_operation" function refactoring
   - add update for operation with recalculating balance
   - unit tests
+  - queries optimization
   - user registration via social networks
   - email registration confirmation
   - something with messaging system
