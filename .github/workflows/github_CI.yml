@@ -36,5 +36,5 @@ jobs:
         
     - name: Lint with flake8
       run: |
-        # 80 chars wide
-        flake8 . --count --max-complexity=5 --show-source --max-line-length=80 --statistics
+        # 95 chars wide
+        flake8 . --count --max-complexity=6 --show-source --max-line-length=95 --statistics
