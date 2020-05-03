@@ -55,7 +55,7 @@ def statement_list(request, pk=None):
     else:
         queryset = AccountOperation.objects.all()
     f = StatementFilter(request.GET, queryset)
-    return render(request, "statement_filter.html", {"filter": f})
+    return render(request, "statement.html", {"filter": f})
 
 
 @transaction.atomic
