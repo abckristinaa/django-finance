@@ -1,6 +1,6 @@
 # django-finance ![finance-CI](https://github.com/abckristinaa/django-finance/workflows/finance-CI/badge.svg?branch=master)
 
-## Study project web application to keep an eye on expences.
+### Study project web application to keep an eye on expences.
 
 Added:
   - Create, Delete and Update wallet
